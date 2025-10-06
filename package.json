@@ -1,20 +1,12 @@
 {
   "name": "@ayd-ab/react-pivottable",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "description": "A React-based pivot table",
-  "main": "PivotTableUI.js",
+  "main": "./dist/PivotTableUI.js",
   "files": [
-    "PivotTable.js",
-    "PivotTableUI.js",
-    "PlotlyRenderers.js",
-    "TableRenderers.js",
-    "Utilities.js",
-    "PivotTable.js.map",
-    "PivotTableUI.js.map",
-    "PlotlyRenderers.js.map",
-    "TableRenderers.js.map",
-    "Utilities.js.map",
-    "pivottable.css"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "start": "webpack-dev-server",
@@ -24,8 +16,8 @@
     "test:prettier:fix": "prettier  --write \"src/*.js*\"",
     "test:jest": "jest",
     "test": "npm run test:eslint && npm run test:prettier && npm run test:jest",
-    "clean": "rm -rf __tests__ PivotTable.js* PivotTableUI.js* PlotlyRenderers.js* TableRenderers.js* Utilities.js* pivottable.css",
-    "build": "npm run clean && cp src/pivottable.css . && babel src --out-dir=. --source-maps --presets=env,react --plugins babel-plugin-add-module-exports",
+    "clean": "rm -rf __tests__ dist",
+    "build": "npm run clean && mkdir dist && cp src/pivottable.css dist/ && cp types/* dist/ && babel src --out-dir=dist --source-maps --presets=env,react --plugins babel-plugin-add-module-exports",
     "doPublish": "npm run build && npm publish",
     "postpublish": "npm run clean"
   },
@@ -77,5 +69,6 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
-  }
+  },
+  "types": "./dist/index.d.ts"
 }
