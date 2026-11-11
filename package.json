@@ -1,6 +1,6 @@
 {
   "name": "@ayd-ab/react-pivottable",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "A React-based pivot table",
   "main": "./dist/PivotTableUI.js",
   "files": [
